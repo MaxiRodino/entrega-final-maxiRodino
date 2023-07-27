@@ -1,0 +1,18 @@
+[
+    {"id":1, "nombre":"Lavado Premium", "imagen": "./img-optimizadas/lavado-de-autos.jpg", "precio":4000, "marca": "Lubricentro JF", "tipo": "Servicios"},
+    {"id":2, "nombre":"Limpieza de interior", "imagen": "./img-optimizadas/lavado-de-interior.jpg", "precio":2500, "marca": "Lubricentro JF", "tipo": "Servicios"},
+    {"id":3, "nombre":"Pulido Detailing", "imagen": "./img-optimizadas/pulir-auto.jpg", "precio":20000, "marca": "Lubricentro JF", "tipo": "Servicios"},
+    {"id":4, "nombre":"Lavado", "imagen": "./img-optimizadas/lavado-de-auto.jpg", "precio":1500, "marca": "Lubricentro JF", "tipo": "Servicios"},
+    {"id":5, "nombre":"Revisión y reparación de frenos", "imagen": "./img-optimizadas/revision-y-reparacion-frenos.jpg", "precio":15000, "marca": "Lubricentro JF", "tipo": "Servicios"},
+    {"id":6, "nombre":"Cambio de aceite y filtros (mano de obra)", "imagen": "./img-optimizadas/cambio-de-aceite-y-filtros.jpg", "precio":8000, "marca": "Lubricentro JF", "tipo": "Servicios"},
+    {"id":7, "nombre":"Kit de filtros y aceite Fiat Palio - Siena", "imagen": "./img-optimizadas/Palio-Siena.jpg", "precio":7500, "marca": "Fiat", "tipo": "Productos"},
+    {"id":8, "nombre":"Kit filtros y aceite Fiat Argo/Cronos", "imagen": "./img-optimizadas/argo-cronos.jpg", "precio":12000, "marca": "Fiat", "tipo": "Productos"},
+    {"id":9, "nombre":"Kit filtros y aceite Peugeot 208", "imagen": "./img-optimizadas/208.jpg", "precio":13000, "marca": "Peugeot", "tipo": "Productos"},
+    {"id":10, "nombre":"Kit filtros y aceite Agile, Corsa Classic, Celta 1.4", "imagen": "./img-optimizadas/agile.jpg", "precio":15000, "marca": "Chevrolet", "tipo": "Productos"},
+    {"id":12, "nombre":"Kit filtros Chevrolet Corsa, Montana, Meriva 1.8", "imagen": "./img-optimizadas/corsa.jpg", "precio":15000, "marca": "Chevrolet", "tipo": "Productos"},
+    {"id":13, "nombre":"Kit filtros y aceite Ford Fiesta 1.6", "imagen": "./img-optimizadas/fiestaKinetic.jpg", "precio":11500, "marca": "Ford", "tipo": "Productos"},
+    {"id":14, "nombre":"Kit filtros Renault Clio 1.2 16v", "imagen": "./img-optimizadas/clio.jpg", "precio":7500, "marca": "Renault", "tipo": "Productos"},
+    {"id":15, "nombre":"Kit filtros y aceite Vw Gol, Suran, Fox, Voyage", "imagen": "./img-optimizadas/Gol-Suran-Fox-Voyage.jpg", "precio":18000, "marca":"Volkswagen", "tipo": "Productos"},
+    {"id":16, "nombre":"Kit filtros y aceite Ford Focus 2", "imagen": "./img-optimizadas/focus2.jpg", "precio":20000, "marca": "Ford", "tipo": "Productos"},
+    {"id":17, "nombre":"Kit filtros y aceite Chevrolet Onix, Prisma", "imagen": "./img-optimizadas/onix-prisma.jpg", "precio":20000, "marca":"Chevrolet", "tipo": "Productos"}
+]
