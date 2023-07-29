@@ -10,7 +10,7 @@ function renderProductos() {
     .then(productos=>{
         let contenido ="";
         productos.forEach(producto => {
-            if(producto.marca != "Lubricentro JF"){
+            
             contenido += `<div class="col-md-3 mb-5">
             <a href="ver-producto.html" onclick="verProducto(${producto.id})" class="text-decoration-none">
                 <div class="card text-center border border-0">
@@ -23,7 +23,6 @@ function renderProductos() {
                 </div>
             </a>
           </div>`;
-        }
     })
      document.getElementById("contenido").innerHTML = contenido;
 }).catch(error => console.log(error));

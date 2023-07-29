@@ -3,29 +3,34 @@ var servicios=[];
 
 fetch("js/productos.json").then(productos => productos.json()).then(resultado => {
     productos = resultado;
-    resultado.forEach( producto => {
-       
-        if(!marcas.includes(producto.marca) && producto.marca != "Lubricentro JF"){
-            marcas.push(producto.marca);
-            crearInputs(producto.marca, "marcas");
-        }
-        if(producto.tipo === "Servicios"){
-            servicios.push(producto.nombre);
-        }
+    //lo ejecutamos solamente en la pantalla principal
+    if(document.location.href.includes("index")){
+        resultado.forEach( producto => {
         
-    
-    });
-    crearServicios();//una vez que recorri todo el listado
+            if(!marcas.includes(producto.marca) && producto.marca != "Lubricentro JF"){
+                marcas.push(producto.marca);
+                crearInputs(producto.marca, "marcas");
+            }
+            if(producto.tipo === "Servicios"){
+                servicios.push(producto.nombre);
+            }
+            
+        
+        });
+        crearServicios();//una vez que recorri todo el listado
+    }
 });
 
 function agregarServicio(input){
     let contenido = "";
     let productos = cargarProductosLS();
+    let productosElegidos = document.getElementById("productos-elegidos");
+    let serviciosElegidos = document.getElementById("servicios-elegidos");
     productos = productos.filter( item => (input.value === item.nombre && input.checked));
-    
+
     if (productos.length > 0){
         productos.forEach(producto => {
-            contenido += `<div class="col-md-3 mb-5">
+            contenido += `<div class="col-md-3 mb-5" id="${input.value}">
             <a href="ver-producto.html" onclick="verProducto(${producto.id})" class="text-decoration-none">
                 <div class="card text-center border border-0">
                     <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
@@ -38,8 +43,20 @@ function agregarServicio(input){
             </a>
           </div>`;    
     });
+   }else{
+    //removemos el div cuando lo deseleccionamos
+    document.getElementById(input.value).remove()
    }
-   document.getElementById("contenido").innerHTML += contenido;
+   //accedemos al padre
+   productosElegidos.innerHTML += contenido;
+
+   //controlamos que no tenga servicios elegidos
+   if(productosElegidos.hasChildNodes()){
+    serviciosElegidos.classList.remove('d-none')
+   }
+   else{
+    serviciosElegidos.classList.add('d-none');
+   }
 }
 
 function filtroInicial(){
@@ -48,8 +65,6 @@ function filtroInicial(){
     marcas.forEach( marca =>
        crearInputs(marca, "marcas") )
        renderProductos();
-       let botones = document.getElementsByName("filtro-servicio");
-       botones.forEach(boton => boton.checked = false)
 }
 
 function crearServicios(){
