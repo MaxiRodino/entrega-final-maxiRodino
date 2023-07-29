@@ -11,7 +11,7 @@ function renderProductos() {
         let contenido ="";
         productos.forEach(producto => {
             
-            contenido += `<div class="col-md-3 mb-5">
+            contenido += `<div class="col-md-3 mb-5" data-name="${producto.nombre}">
             <a href="ver-producto.html" onclick="verProducto(${producto.id})" class="text-decoration-none">
                 <div class="card text-center border border-0">
                     <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">

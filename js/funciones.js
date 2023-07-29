@@ -1,6 +1,12 @@
 var marcas=[];
 var servicios=[];
 
+document.getElementById("textoBusqueda").addEventListener(
+    "keyup", function(event){
+        if (event.keyCode === 13){
+            filtroProductos();
+        }}
+)
 fetch("js/productos.json").then(productos => productos.json()).then(resultado => {
     productos = resultado;
     //lo ejecutamos solamente en la pantalla principal
@@ -29,6 +35,7 @@ function agregarServicio(input){
     productos = productos.filter( item => (input.value === item.nombre && input.checked));
 
     if (productos.length > 0){
+        document.querySelector(`[data-name="${input.value}"]`).classList.add("d-none");
         productos.forEach(producto => {
             contenido += `<div class="col-md-3 mb-5" id="${input.value}">
             <a href="ver-producto.html" onclick="verProducto(${producto.id})" class="text-decoration-none">
@@ -46,6 +53,7 @@ function agregarServicio(input){
    }else{
     //removemos el div cuando lo deseleccionamos
     document.getElementById(input.value).remove()
+    document.querySelector(`[data-name="${input.value}"]`).classList.remove("d-none");
    }
    //accedemos al padre
    productosElegidos.innerHTML += contenido;
